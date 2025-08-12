@@ -1,0 +1,13 @@
+@use 'constants';
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    &__content {
+        max-width: constants.$DEFAULT_WIDTH;
+        width: 100%;
+    }
+
+}

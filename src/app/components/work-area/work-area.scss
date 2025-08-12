@@ -1,0 +1,36 @@
+@use 'constants';
+
+.work-area-container {
+  background: constants.$work-area-container-background;
+
+  &__page {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+
+    &__wrapper {
+      width: max-content;
+      position: relative;
+
+      & img {
+        max-width: calc(100% - 40px);
+        padding: 0 20px;
+
+      }
+
+      & .annotations-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        &__annotation {
+          width: 30px;
+          height: 30px;
+          background: red;
+          position: absolute;
+        }
+      }
+    }
+
+  }
+}

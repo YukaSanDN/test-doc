@@ -1,0 +1,29 @@
+<div class="work-area-container">
+  @for (page of pages; track page.number) {
+  <div class="work-area-container__page">
+    <div class="work-area-container__page__wrapper">
+      <img
+        alt="Random image"
+        tuiLoading="lazy"
+        [src]="page.imageUrl"
+        pictureAnalysisDirective
+        (pictureAnalysisValue)="pictureAnalysisValue($event, page)"
+      />
+      <div class="annotations-wrapper">
+        @for (annotation of page.annotations; track annotation.index){
+        <div
+          [style.left]="annotation.initialCoordinates.clickX"
+          [style.top]="annotation.initialCoordinates.clickY"
+          class="annotations-wrapper__annotation"
+        >
+          test
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  } @empty {
+  <p>No items found.</p>
+  }
+</div>
