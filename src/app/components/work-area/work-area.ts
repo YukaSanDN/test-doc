@@ -85,13 +85,11 @@ export class WorkArea implements OnInit {
           100) /
         100;
 
-
       annotation.initialCoordinates.currentPositionX =
         annotation.initialCoordinates.creationClickX * widthRatio;
 
       annotation.initialCoordinates.resizeCurrentPositionX =
         eventValue.resizeElement.currentWidth;
-
 
       const heightRatio =
         ((eventValue.currentHeight /
@@ -149,6 +147,20 @@ export class WorkArea implements OnInit {
   }
 
   public save(): void {
+    
+    this.consolrInfo();
+    debugger;
+    // дебагер тут не случайный, для возможности ознакомится в консоли с содержанием. без консоли дебагер не отрабатывает
     this.receivingData.updatePage(this.pages);
+    
+  }
+
+  private consolrInfo(): void{
+    this.pages.forEach((page : Page) => {
+        console.log(`номер страницы:${page.number}`);
+        page.annotations?.forEach((annotation: Annotation) => {
+          console.log(`анотация ${annotation.index}: ${annotation.comment}`);
+        });
+    });
   }
 }

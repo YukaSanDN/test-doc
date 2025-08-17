@@ -1,141 +1,29 @@
 {
-  "name": "test doc",
-  "pages": [
-    {
-      "number": 1,
-      "imageUrl": "assets/images/1.png",
-      "annotations": [
+    "name": "test doc",
+    "pages": [
         {
-          "index": 1,
-          "initialCoordinates": {
-            "creationClickX": 536,
-            "creationClickY": 63,
-            "currentPositionX": 536,
-            "currentPositionY": 63,
-            "creationSize": {
-              "currentWidth": 794,
-              "currentHeight": 1123
-            },
-            "naturalWidth": 794,
-            "naturalHeight": 1123,
-            "resizeCurrentPositionX": 794,
-            "resizeCurrentPositionY": 1123
-          },
-          "comment": "sdfaa dsfd",
-          "isFilled": true,
-          "commentColor": "var(--tui-text-primary)",
-          "commentBackground": "var(--tui-text-negative-hover)"
+            "number": 1,
+            "imageUrl": "assets/images/1.png"
         },
         {
-          "index": 2,
-          "initialCoordinates": {
-            "creationClickX": 546,
-            "creationClickY": 377,
-            "currentPositionX": 546,
-            "currentPositionY": 377,
-            "creationSize": {
-              "currentWidth": 794,
-              "currentHeight": 1123
-            },
-            "naturalWidth": 794,
-            "naturalHeight": 1123,
-            "resizeCurrentPositionX": 794,
-            "resizeCurrentPositionY": 1123
-          },
-          "comment": "qweqw rwr ew",
-          "isFilled": true,
-          "commentColor": "var(--tui-text-primary)",
-          "commentBackground": "var(--tui-text-negative-hover)"
+            "number": 2,
+            "imageUrl": "assets/images/2.png"
         },
         {
-          "index": 3,
-          "initialCoordinates": {
-            "creationClickX": 254,
-            "creationClickY": 394,
-            "currentPositionX": 254,
-            "currentPositionY": 394,
-            "creationSize": {
-              "currentWidth": 794,
-              "currentHeight": 1123
-            },
-            "naturalWidth": 794,
-            "naturalHeight": 1123,
-            "resizeCurrentPositionX": 794,
-            "resizeCurrentPositionY": 1123
-          },
-          "comment": "e wqrewr ewqr",
-          "isFilled": true,
-          "commentColor": "var(--tui-text-primary)",
-          "commentBackground": "var(--tui-text-negative-hover)"
+            "number": 3,
+            "imageUrl": "assets/images/3.png"
         },
         {
-          "index": 4,
-          "initialCoordinates": {
-            "creationClickX": 478,
-            "creationClickY": 654,
-            "currentPositionX": 478,
-            "currentPositionY": 654,
-            "creationSize": {
-              "currentWidth": 794,
-              "currentHeight": 1123
-            },
-            "naturalWidth": 794,
-            "naturalHeight": 1123,
-            "resizeCurrentPositionX": 794,
-            "resizeCurrentPositionY": 1123
-          },
-          "comment": "sdfsdf dsaf ",
-          "isFilled": true,
-          "commentColor": "var(--tui-text-primary)",
-          "commentBackground": "var(--tui-text-negative-hover)"
+            "number": 4,
+            "imageUrl": "assets/images/4.png"
         },
         {
-          "index": 5,
-          "initialCoordinates": {
-            "creationClickX": 300,
-            "creationClickY": 188,
-            "currentPositionX": 300,
-            "currentPositionY": 188,
-            "creationSize": {
-              "currentWidth": 794,
-              "currentHeight": 1123
-            },
-            "naturalWidth": 794,
-            "naturalHeight": 1123,
-            "resizeCurrentPositionX": 794,
-            "resizeCurrentPositionY": 1123
-          },
-          "comment": "d fgaretwertq",
-          "isFilled": true,
-          "commentColor": "var(--tui-text-primary)",
-          "commentBackground": "var(--tui-text-negative-hover)"
+            "number": 5,
+            "imageUrl": "assets/images/5.png"
+        },
+         {
+            "number": 6,
+            "imageUrl": "assets/images/test.jpg"
         }
-      ],
-      "id": "1"
-    },
-    {
-      "number": 2,
-      "imageUrl": "assets/images/2.png",
-      "annotations": [],
-      "id": "2"
-    },
-    {
-      "number": 3,
-      "imageUrl": "assets/images/3.png",
-      "annotations": [],
-      "id": "3"
-    },
-    {
-      "number": 4,
-      "imageUrl": "assets/images/4.png",
-      "annotations": [],
-      "id": "4"
-    },
-    {
-      "number": 5,
-      "imageUrl": "assets/images/5.png",
-      "annotations": [],
-      "id": "5"
-    }
-  ]
+    ]
 }

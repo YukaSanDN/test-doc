@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "json-server": "json-server --watch ./src/assets/source/server.json --port 3000",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "watch": "ng build --watch --configuration development"
   },
   "prettier": {
     "overrides": [
