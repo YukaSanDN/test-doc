@@ -16,16 +16,32 @@ export class ReceivingData {
           return {
             number: page.number,
             imageUrl: page.imageUrl,
-            annotations: !page?.annotations ? [] : page?.annotations?.map((annotation: any) => {
-              return {
-                initialCoordinates: annotation.initialCoordinates,
-                comment: annotation.comment,
-                image: annotation.image,
-              } as Annotation;
-            }),
+            annotations: !page?.annotations
+              ? []
+              : page?.annotations?.map((annotation: any) => {
+                  return {
+                    index: annotation.index,
+                    initialCoordinates: annotation.initialCoordinates,
+                    comment: annotation.comment,
+                    isFilled: annotation.isFilled,
+                    commentColor: annotation.commentColor,
+                    commentBackground: annotation.commentBackground,
+                  } as Annotation;
+                }),
           } as Page;
         });
       })
     );
+  }
+
+  public updatePage(pages: Page[]): void {
+    const body = {
+      pages: pages,
+    };
+    pages.forEach((page: Page) => {
+      this.http
+        .patch(`http://localhost:3000/pages/${page.number}`, page)
+        .subscribe();
+    });
   }
 }

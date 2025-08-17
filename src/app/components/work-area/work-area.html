@@ -1,23 +1,40 @@
 <div class="work-area-container">
+  <div class="work-area-container__page">
+    <div class="work-area-container__page__button">
+      <div>
+        <button size="s" tuiButton type="button" (click)="zoom(true)">+</button>
+        <button size="s" tuiButton type="button" (click)="zoom(false)">-</button>
+      </div>
+      <div>
+        <button (click)="save()" size="s" tuiButton type="button">
+          сохранить
+        </button>
+      </div>
+    </div>
+  </div>
   @for (page of pages; track page.number) {
   <div class="work-area-container__page">
-    <div class="work-area-container__page__wrapper">
+    <div class="work-area-container__page__wrapper" 
+    zoomElement
+    [zoomValue]="zoomValue"
+    [identifier]="'zoomImg'"
+    >
       <img
         alt="Random image"
         tuiLoading="lazy"
+        zoomImg
         [src]="page.imageUrl"
         pictureAnalysisDirective
         (pictureAnalysisValue)="pictureAnalysisValue($event, page)"
+        (picturereSizeValue)="pictureResizeValue($event, page)"
       />
       <div class="annotations-wrapper">
         @for (annotation of page.annotations; track annotation.index){
-        <div
-          [style.left]="annotation.initialCoordinates.clickX"
-          [style.top]="annotation.initialCoordinates.clickY"
-          class="annotations-wrapper__annotation"
-        >
-          test
-        </div>
+        <app-annotation
+          [anotationData]="annotation"
+          (remove)="removeAnnotations($event, page)"
+          (moving)="movingAnnotations($event, page)"
+        ></app-annotation>
         }
       </div>
     </div>

@@ -1,0 +1,73 @@
+@use 'constants';
+
+.annotation {
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+
+    // background: constants.$work-area-annotation-background;
+    &__display {
+        padding: 5px;
+        border-radius: 4px;
+        opacity: .6;
+        transition: opacity 0.5s;
+        max-width: 200px;
+        cursor: move;
+
+        &.show {
+            opacity: 1;
+        }
+
+        &:hover {
+            transition: opacity 0.5s;
+            opacity: 1;
+        }
+    }
+
+    &:hover {
+        & .display {
+            opacity: .8;
+            transition: opacity 0.5s;
+            background: white;
+        }
+    }
+
+
+    &__settings {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-bottom: 5px;
+
+        &__palette {
+            border: none;
+            width: 26px;
+            height: 20px;
+            margin-top: -3px;
+            background: none;
+        }
+
+        &__settings-button {
+            width: 20px;
+            height: 20px;
+            padding: 0 0 0 5px;
+        }
+
+        &.display {
+            opacity: 0;
+            transition: opacity 0.5s;
+
+        }
+
+        &.view {
+            background: white;
+            opacity: .8;
+        }
+
+
+    }
+
+}

@@ -1,0 +1,102 @@
+<div
+  class="annotation"
+  [style.left]="anotationData?.initialCoordinates?.currentPositionX + 'px'"
+  [style.top]="anotationData?.initialCoordinates?.currentPositionY + 'px'"
+  elementMovement
+  (elementPosition)="elementPosition($event)"
+>
+  @if(anotationData?.isFilled){
+  <div class="annotation__settings display">
+    <lucide-icon
+      [size]="20"
+      [img]="eye"
+      [color]="'#f79e99'"
+      class="annotation__settings__settings-button"
+      (click)="showAnnotation()"
+    ></lucide-icon>
+    <lucide-icon
+      [size]="20"
+      [img]="pencilLine"
+      [color]="'#f79e99'"
+      class="annotation__settings__settings-button"
+      (click)="updateAnnotation()"
+    ></lucide-icon>
+    <lucide-icon
+      [size]="20"
+      [img]="removeIcon"
+      [color]="'#f79e99'"
+      class="annotation__settings__settings-button"
+      (click)="removeAnnotation()"
+    ></lucide-icon>
+  </div>
+  <div
+    class="annotation__display"
+    [class]="{'show': isShowText}"
+    [style.background]="colorPalette$ | async"
+    [style.color]="colorLetterText$ | async"
+  >
+    {{ anotationData?.comment }}
+  </div>
+  } @else {
+  <div class="annotation__settings view">
+    <button
+      class="annotation__settings__palette"
+      type="button"
+      [tuiDropdown]="paletteLetterText"
+      [tuiDropdownOpen]="false"
+    >
+      <lucide-icon
+        [size]="20"
+        color="{{ colorLetterText$ | async }}"
+        [img]="letterText"
+      ></lucide-icon>
+      <ng-template #paletteLetterText>
+        <tui-palette
+          [colors]="colorsText"
+          (selectedColor)="updateColorLetterText($event)"
+        />
+      </ng-template>
+    </button>
+    <button
+      class="annotation__settings__palette"
+      type="button"
+      [tuiDropdown]="palette"
+      [tuiDropdownOpen]="false"
+      s
+    >
+      <lucide-icon
+        [size]="20"
+        color="{{ colorPalette$ | async }}"
+        [img]="paletteIcon"
+      ></lucide-icon>
+      <ng-template #palette>
+        <tui-palette
+          [colors]="colorsPalette"
+          (selectedColor)="updateColorPalette($event)"
+        />
+      </ng-template>
+    </button>
+    <lucide-icon
+      [size]="20"
+      [img]="save"
+      [color]="'#474747'"
+      class="annotation__settings__settings-button"
+      (click)="saveValue()"
+    ></lucide-icon>
+    <lucide-icon
+      [size]="20"
+      [img]="removeIcon"
+      [color]="'#f79e99'"
+      class="annotation__settings__settings-button"
+      (click)="removeAnnotation()"
+    ></lucide-icon>
+  </div>
+  <div>
+    <textarea
+      [style.background]="colorPalette$ | async"
+      [style.color]="colorLetterText$ | async"
+      [(ngModel)]="annotationText"
+    ></textarea>
+  </div>
+  }
+</div>

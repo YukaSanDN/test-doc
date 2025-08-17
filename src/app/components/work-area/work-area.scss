@@ -7,7 +7,17 @@
     padding-top: 10px;
     display: flex;
     justify-content: center;
+    &__button{
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      padding: 0 20px;
 
+      & button{
+        min-width: 30px;
+        margin-left: 5px;
+      }
+    }
     &__wrapper {
       width: max-content;
       position: relative;
@@ -23,12 +33,6 @@
         left: 0;
         top: 0;
 
-        &__annotation {
-          width: 30px;
-          height: 30px;
-          background: red;
-          position: absolute;
-        }
       }
     }
 
